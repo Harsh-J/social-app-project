@@ -32,7 +32,8 @@ connect.then((db)=>{
 var app = express();
 
 // view engine setup
-
+app.set('views', path.join(__dirname, 'public'));
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
