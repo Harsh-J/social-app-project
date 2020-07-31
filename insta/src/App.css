@@ -1,0 +1,518 @@
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+}
+
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+}
+
+.footer{
+  background-color: #D1C4E9;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+}
+.jumbotron {
+  padding:70px 30px 70px 30px;
+  margin:0px auto;
+  background: #9575CD ;
+  color:floralwhite;
+}
+
+address{
+  font-size:80%;
+  margin:0px;
+  color:#0f0f0f;
+}
+
+.navbar-dark {
+  background-color: #512DA8;
+}
+
+.page-enter {
+  opacity: 0.01;
+  transform: translateX(-100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 300ms ease-in;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.page-exit-active {
+  opacity: 0.01;
+  transform: translateX(100%);
+  transition: all 300ms ease-out;
+}
+
+.headApp{
+
+  background-color: white !important;
+  
+  
+  color: dimgray;
+  margin-bottom: 0px !important;
+
+}
+.headAppDiv{
+ 
+  justify-content: center !important;
+  text-align: center;
+}
+.headAppcont{
+  background-color: white;
+  text-align: center;
+ 
+}
+.headApprow{
+  justify-content: center;
+}
+.headNav{
+  
+  box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.54);
+-webkit-box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.54);
+-moz-box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.54);
+
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.brand p{ 
+
+  margin:0px;
+  padding: 7px;
+  align-items: center;
+}
+.login-btn{
+  text-align: center;
+  
+}
+.login-btn-btn{
+  width: 30%;
+}
+.signup-btn{
+  text-align: center;
+  
+}
+.signup-btn-btn{
+  width: 30%;
+}
+
+.my_image{
+  width: 110pxhj;
+}
+.fb-login-btn{
+
+  text-align: center;
+}
+.fb-login-btn button{
+
+  font-size: 11px;
+  border-radius: 3px !important;
+  -webkit-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+-moz-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+}
+
+.fb-login-btn button:active{
+  border:none !important;
+}
+.cardtitle{
+  padding-left: 10px;
+  margin-bottom: 0px !important;
+  
+  font-weight: bold;
+  
+}
+.cardtitle img{
+  border-radius:16px;
+
+  margin-right: 10px;
+  object-fit: cover !important;
+  
+  
+}
+.card-title{
+  margin-bottom: 0px !important;
+}
+.cardorg{
+  
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.likebtn{
+  color:red !important;
+  border: none !important;
+  padding-left: 0px !important;
+  background-color: white !important;
+  outline: none !important;
+
+}
+.likebtn:hover{
+  text-decoration: none !important;
+  font-size: 1.25rem !important;
+  
+}
+.likebtn:active{
+  border:none !important;
+  text-decoration: none !important;
+}
+
+.commentbtn{
+  background-color: white !important;
+
+  color:black !important;
+  padding-bottom: 5px;
+    border:1px solid lightgrey!important;
+    height: 50px !important;
+}
+
+.likebtn:hover{
+  font-size: 17px;
+  text-decoration: none !important;
+}
+.likebtn:focus{
+  background-color: white !important;
+  border:white !important;
+}
+.cardhead{
+  background-color: white !important;
+  border:none !important;
+}
+.card-body{
+  padding-bottom:5px !important;
+}
+.likebtn:focus,
+.likebtn:active{
+    box-shadow:none !important;
+    outline:0px !important;
+}
+
+.dropbtn:focus,
+.dropbtn:active{
+    box-shadow:none !important;
+    outline:0px !important;
+    
+}
+.dropbtn{
+  border:none !important; 
+  color:white !important;
+}
+.dropbtn:hover{
+
+  background-color: #512DA8 !important;
+}
+.dropbtn:focus,
+.dropbtn:active{
+  background-color:#512DA8 !important ;
+  color:black !important;
+}
+.navbar-text{
+  color: white !important;
+  font-size: 16px;
+}
+.commentbtndiv{
+  width: 100%;
+}
+
+.commentpara{
+  
+  margin-bottom: 0px;
+}
+
+.commentBy{
+  margin-bottom: 0px;
+}
+.commentline{
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.navlink{
+  color: black;
+  width: 100%;
+}
+.navlink:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.uploaddiv{
+  padding-bottom: 64px;
+}
+
+.postsubmitbtn{
+  margin-bottom: 10px;
+}
+.userpic img{
+ 
+  
+  width: 150px;
+  height: 150px;
+ 
+  margin-left: 10px;
+  border-radius: 100px;
+  max-width: 100%;
+  object-fit: cover !important;
+  -webkit-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  -moz-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+
+}
+.userpic{
+  width: 50%;
+  text-align: center;
+}
+.userinfo{
+  width: 50%;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.postimg{
+  max-height: 350px;
+  object-fit: cover !important;
+  
+}
+
+
+.profilediv{
+  text-align: center;
+}
+.userpicbtn{
+  background-color: white !important;
+  border: 1px solid dimgrey !important;
+  outline: none !important;
+  color:black !important;
+  margin-top: 5px !important;
+  margin-left: 10px;
+}
+
+.profileimages{
+  max-width: 100%;
+  padding-bottom: 10px !important;
+  
+}
+.postsdiv{
+  align-items: center !important;
+    /* margin: auto; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    justify-content: center !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.ouserpic img{
+  margin: 0px !important;
+  margin-bottom: 10px !important;
+}
+
+.ouserinfo{
+  margin-top: 0px;
+
+}
+.ouserinfo p{
+  margin-bottom: 12px;
+}
+
+.followbtn{
+  background-color: seagreen !important;
+  outline: none !important;
+  border: none !important;
+  color: white !important;
+  -webkit-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  -moz-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  padding-left:15px !important;
+  padding-right: 15px !important;
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.unfollowbtn{
+  background-color: crimson !important;
+  border: none !important;
+  color: white !important;
+  -webkit-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  -moz-box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
+  padding-left:15px !important;
+  padding-right: 15px !important;
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+  font-weight: bold;
+
+}
+
+.date{
+  font-size: 10px;
+  color: dimgray;
+  font-weight: lighter;
+
+
+}
+.oprofilelink{
+  color: black;
+  text-decoration: none;
+}
+.oprofilelink:hover{
+  color: black;
+  text-decoration: none;
+}
+.commentsbtn:focus{
+
+  outline: none;
+  border:none;
+  box-shadow: none;
+}
+.modelimg{
+  max-width: 100%;
+
+}
+
+.mainlink{
+  color:white !important;
+  text-decoration: none;
+}
+.mainlink:hover{
+  text-decoration: none !important;
+}
+.defaultmsg{
+
+  color:dimgray;
+  font-style: italic;
+  padding: 20px;
+}
+.defaultmsglink{
+  font-weight: bold;
+}
+
+.defaultmsgfp{
+  width: 100% !important;
+  text-align: center !important;
+  color:dimgray;
+  font-style: italic;
+  padding: 20px;
+  background-color: beige;
+  border-radius: 12px;
+}
+.defaultmsgfpdiv{
+  text-align: center;
+}
+.deletebtn{
+  right: 0 !important;
+    position: absolute !important;
+    padding: 8px !important;
+    margin-right: 13px !important;
+}
+.deletebtn:hover{
+  cursor: pointer;
+  background-color:whitesmoke;
+  border-radius: 5px;
+}
+.commentby{
+  position: absolute;
+  right: 0;
+  font-size: 11px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  font-weight: lighter;
+  
+  padding: 6px;
+}
+.commentby:hover{
+  font-weight: 400;
+}
+.comment{
+  width: 85% !important;
+  
+  padding-top: 8px;
+}
+
+.commentsbmtform{
+  width:100%;
+  padding: 5px;
+}
+.commentsbtn{
+  position: sticky; 
+    top: 0;
+    /* position: static; */
+    position: sticky;
+    /* background: aqua; */
+    /* background: wheat; */
+    background: white;
+    z-index: 1;
+}
+.commentform{
+
+  position: sticky; 
+    bottom: 0;
+    /* position: static; */
+    position: sticky;
+    /* background: aqua; */
+    /* background: wheat; */
+    background: white;
+    z-index: 1;
+    border:none !important;
+}
+
+.likeslinkbtnlink{
+  background: whitesmoke !important;
+  border: none !important;
+  color: black !important;
+  padding: 0px !important;
+  padding: 5px !important;
+  border: 5px !important;
+  box-shadow: none !important;
+}
+.likeslinkbtnlink:hover{
+
+  cursor: pointer !important;
+  text-decoration: none;
+  color:black
+}
+.likemodalpic {
+  border-radius:20px;
+
+  margin-right: 10px;
+  object-fit: cover !important;
+}
+.likedby{
+  position: absolute;
+  right: 0;
+  font-size: 11px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  font-weight: lighter;
+  
+  padding: 6px;
+  margin-top:7px;
+}
+.likedby:hover{
+  font-weight: 400;
+  cursor: pointer;
+}
+.loading{
+  text-align: center;
+}
+.errmess{
+  justify-content: center;
+}
+.searchbtn{
+  background: none !important;
+    width: 50px !important;
+    border: 1px solid whitesmoke !important;
+    box-shadow: none;
+}
+.searchbtn:focus{
+  
+  box-shadow: none !important ;
+}
