@@ -49,7 +49,7 @@ app.use('/posts',postsRouter);
 app.use('/comments',commentRouter);
 app.use('/likes',likeRouter);
 
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // catch 404 and forward to error handler
