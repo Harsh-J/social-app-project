@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix insta && npm run build --prefix insta"
+    "start": "node ./bin/www",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix insta && npm run build --prefix insta" 
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -18,7 +17,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.21",
     "morgan": "~1.9.1",
-    
+    "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",

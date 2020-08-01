@@ -6,7 +6,6 @@ var logger = require('morgan');
 var passport=require('passport');
 var authenticate=require('./authenticate');
 var config=require('./config');
-const PORT=process.env.PORT || 3000;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
@@ -19,6 +18,7 @@ const Post=require('./models/posts');
 const Comments=require('./models/comments');
 const Likes=require('./models/likes');
 const likeRouter = require('./routes/likeRouter');
+const { resolveSoa } = require('dns');
 
 const url=config.mongouri;
 const connect=mongoose.connect(url);
@@ -32,8 +32,8 @@ connect.then((db)=>{
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'public'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -43,15 +43,21 @@ app.use(cookieParser());
 app.use(passport.initialize());
 
 
-app.use('/', indexRouter);
+
 app.use('/users', usersRouter);
 app.use('/posts',postsRouter);
 app.use('/comments',commentRouter);
 app.use('/likes',likeRouter);
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'insta/build')));
 
-
+if(process.env.NODE_ENV=='production'){
+  app.use(express.static('insta/build'))
+  const path=require('path')
+  app.get("*",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'insta','build','index.html'))
+  })
+}
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -67,17 +73,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-if(process.env.NODE_ENV=="production"){
-  app.use(express.static('insta/build'))
-  const path=require('path')
-  app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'insta','build','index.html'))
-  })
-}
-
-app.listen(PORT,()=>{
-  console.log('Server is running on port',PORT);
-})
 
 module.exports = app;

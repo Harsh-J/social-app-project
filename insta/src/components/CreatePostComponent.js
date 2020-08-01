@@ -52,20 +52,20 @@ class Form extends Component {
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                         <Row className="form-group">
                             <Col>
-                            <Label htmlFor="title">Title</Label>
+                            <Label htmlFor="title">Title(optional)</Label>
                             <Control.text model=".title" id="title" className="form-control" />
                             </Col>
                         </Row>
                         <Row className="form-group">
                             <Col>
-                            <Label htmlFor="body">Body</Label>
+                            <Label htmlFor="body">Body(optional)</Label>
                             <Control.text model=".body" id="body" className="form-control" />
                             </Col>
                         </Row>
                        
                         <Row className="form-group">
                             <Col>
-                            <Label htmlFor="image">Select Image</Label>
+                            <Label htmlFor="image">Select Image*</Label>
                             <Control.file model=".image" id="image"className="form-control" />
                             </Col>
                         </Row>

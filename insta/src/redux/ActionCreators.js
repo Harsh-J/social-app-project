@@ -379,6 +379,7 @@ export const fetchPosts=()=>(dispatch)=>{
             dispatch(fetchPosts());
          
             dispatch(userpicSuccess());
+            dispatch(fetchLikes());
            
             
         })

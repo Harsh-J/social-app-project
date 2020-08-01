@@ -97,33 +97,7 @@ class Header extends Component {
                         <NavbarBrand className="mr-auto brand">
                            <Link to="/" className="mainlink"> <p>Get Social</p></Link>
                         </NavbarBrand>
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar className="mr-auto">
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/home">
-                                        Home
-                                </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/aboutus">
-                                        About Us
-                                </NavLink>
-                                </NavItem>
-
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/favorites">
-                                        My Favorites
-                                </NavLink>
-                                </NavItem>
-
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/contactus">
-                                        Contact Us
-                                </NavLink>
-                                </NavItem>
-                            </Nav>
-
-                        </Collapse>
+                        
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 {!this.props.auth.isAuthenticated ?
