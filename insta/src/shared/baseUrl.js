@@ -1,1 +1,1 @@
-export const baseUrl=process.env.PORT || 'http://localhost:3000/';
+export const baseUrl='https://getsocialapplication.herokuapp.com/';
