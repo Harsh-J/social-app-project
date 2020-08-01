@@ -1,1 +1,1 @@
-export const baseUrl='https://getsocialapplication.herokuapp.com/';
+export const baseUrl='http://localhost:3000/' || 'https://getsocialapplication.herokuapp.com/';

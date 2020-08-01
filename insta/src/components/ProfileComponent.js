@@ -52,7 +52,7 @@ class Profile extends Component{
                  <div className="row justify-content-md-center mt-0 profilediv">
                 <div className="col-12 col-md-9 ">
                 <div className="row">
-                <div className="userpic col-sm-6">
+                <div className="userpic col-sm-5">
                 {this.props.userinfo ? 
                <img src= {this.props.userinfo.photo} />
                 :
@@ -84,7 +84,7 @@ class Profile extends Component{
                 
                 
                 </div>
-                <div className="userinfo col-sm-6 mr-0 ">
+                <div className="userinfo col-md-4 mr-0 ">
         <p className="font-weight-bold"> {this.props.user.userinfo  ? 
                 <span>{this.props.user.userinfo.username}</span>
                 :
