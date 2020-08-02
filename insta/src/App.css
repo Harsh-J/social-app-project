@@ -61,6 +61,7 @@ address{
   
   color: dimgray;
   margin-bottom: 0px !important;
+  padding-bottom: 17px !important;
 
 }
 .headAppDiv{
@@ -258,7 +259,7 @@ box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
   width: 150px;
   height: 150px;
  
-  margin-left: 10px;
+
   border-radius: 100px;
   max-width: 100%;
   object-fit: cover !important;
@@ -294,7 +295,7 @@ box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
   outline: none !important;
   color:black !important;
   margin-top: 5px !important;
-  margin-left: 10px;
+  
 }
 
 .profileimages{
