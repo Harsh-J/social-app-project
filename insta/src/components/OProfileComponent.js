@@ -110,7 +110,7 @@ class OProfile extends Component{
             <span></span>
             :
             //show unfollow button if this user is already present in the current logged in list of following users
-            this.props.currentuser.userinfo.following.indexOf(this.props.userinfo._id) !==-1 ?
+            this.props.user.ouserinfo.followers.indexOf(this.props.currentuser.userinfo._id) !==-1 ?
             <span><Button color="primary" className="unfollowbtn" onClick={()=>this.props.unfollowUser(this.props.user.ouserinfo._id)}>Unfollow{this.props.user.ouserunfollowLoading ? <span className="fa fa-spinner fa-pulse ml-1"></span>
             :
             <span></span>}</Button></span>
