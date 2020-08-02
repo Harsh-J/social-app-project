@@ -50,9 +50,9 @@ class Profile extends Component{
             
             <div className="container">
                  <div className="row justify-content-md-center mt-0 profilediv">
-                <div className="col-12 col-md-9 ">
+                <div className="col-12 col-md-12 ">
                 
-                <div className="userpic col-md-5">
+                <div className="userpic">
                 {this.props.userinfo ? 
                <img src= {this.props.userinfo.photo} />
                 :
@@ -84,7 +84,7 @@ class Profile extends Component{
                 
                 
                 </div>
-                <div className="userinfo col-md-4 mr-0 ">
+                <div className="userinfo ">
         <p className="font-weight-bold"> {this.props.user.userinfo  ? 
                 <span>{this.props.user.userinfo.username}</span>
                 :
@@ -107,6 +107,7 @@ class Profile extends Component{
                
     
                 {posts.length==0 ?
+                
                  <span className="defaultmsg">How it's going? Good? But you haven't posted anything !! Go for it <span><Link to="/createPost" className="defaultmsglink">createPost</Link></span></span>:
                  
                  <div className="row col-12 postsdiv">{posts}</div>}
