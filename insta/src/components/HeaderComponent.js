@@ -3,7 +3,38 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron, 
 import { NavLink } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
-
+function RenderUser({search,fetchOUser}) {
+    if (search.searchusersinfo != null)
+        return(
+            <div className="col-12 col-md-12 m-1">
+               
+                <ul className="list-unstyled">
+                
+                        {search.searchusersinfo.user.map((user) => {
+                            return (
+                                <div key={user._id}>
+                                    
+                                    <li>
+                                    <p className="comment" ><img className="likemodalpic" src={user.photo} width="40px" height="40px" /><span className=""> {user.firstname} {user.lastname}</span><Link to={`/oprofile/${user.username}`}  className="oprofilelink" onClick={()=>fetchOUser(user._id)}><span className="likedby">@ {user.username}</span></Link></p>
+                                  
+                                    
+                                  
+                                    </li>
+                                    <hr className="commentline"></hr>
+                                
+                                </div>
+                            );
+                        })}
+                  
+                </ul>
+               
+            </div>
+        );
+    else
+        return(
+            <div></div>
+        );
+}
 
 
 class Header extends Component {
@@ -26,6 +57,7 @@ class Header extends Component {
         this.handleLogout = this.handleLogout.bind(this);
         this.toggledropdown = this.toggledropdown.bind(this);
         this.toggleSearchModal=this.toggleSearchModal.bind(this);
+        this.searchModal=this.searchModal.bind(this);
        
 
         this.toggleNested=this.toggleNested.bind(this);
@@ -36,6 +68,13 @@ class Header extends Component {
     toggleNav() {
         this.setState({
             isNavOpen: !this.state.isNavOpen
+        });
+    }
+    toggleSearchModal() {
+        this.setState({
+            isSearchModalOpen: !this.state.isSearchModalOpen,
+            searchtext:''
+            
         });
     }
     toggleModal() {
@@ -69,6 +108,13 @@ class Header extends Component {
        
       }
 
+      searchModal(value){
+        this.setState({
+            searchtext:value,
+
+        })
+        this.props.fetchSearchUsers(value);
+    }
     handleLogin(event) {
         this.toggleModal();
         this.props.loginUser({ username: this.username.value, password: this.password.value });
@@ -110,7 +156,7 @@ class Header extends Component {
                                     </Button>
                                     :
                                     <div>
-                                        
+                                         <Button onClick={this.toggleSearchModal} className="searchbutton"><span className="fa fa-search"></span></Button>
                                         <ButtonDropdown direction="left" isOpen={this.state.dropdownOpen} toggle={this.toggledropdown}>
                                             <DropdownToggle caret  outline color="warning" className="dropbtn">
                                             <div className="navbar-text ">{this.props.auth.user.username}</div>
@@ -157,12 +203,18 @@ class Header extends Component {
                     </div>
                     <hr></hr>
                 </Jumbotron>
-                <Modal isOpen={this.state.isSearchModalOpen} toggle={this.toggleSearchModal}>
+              
+           <Modal isOpen={this.state.isSearchModalOpen} toggle={this.toggleSearchModal}>
             <ModalHeader toggle={this.toggleSearchModal} >Search a user</ModalHeader>
             <ModalBody>      
                       
-               <Input type="text" placeholder="search a user by username or full name" value={this.state.searchtext} onChange={(e)=>this.props.fetchSearchUsers(e.target.value)} />  
-                    
+               <Input type="text" placeholder="search a user by firstname" value={this.state.searchtext} onChange={(e)=>this.searchModal(e.target.value)} />  
+                {this.props.search.isLoading !=true ?
+                    <span><RenderUser search={this.props.search} fetchOUser={this.props.fetchOUser} /></span>           
+                    :
+                    <span></span>
+    }
+
                 
             </ModalBody>
             

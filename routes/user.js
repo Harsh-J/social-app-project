@@ -251,8 +251,10 @@ router.put('/updatepic',authenticate.verifyUser,cors.corsWithOptions,(req,res,ne
 
 })
 router.post('/search-users',authenticate.verifyUser,cors.corsWithOptions,(req,res,next)=>{
+ 
+ 
   let userPat=new RegExp("^"+req.body.query);
-  User.find({username:{$regex:userPat}})
+  User.find({firstname:{$regex:userPat}})
     .then(user=>{
       res.json({user});
     },(err)=>next(err))

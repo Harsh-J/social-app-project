@@ -28,6 +28,7 @@ const mapStateToProps=state=>{
         upload:state.upload,
         followingposts:state.followingposts,
         delete:state.delete,
+        search:state.search
 
     }
 }
@@ -93,6 +94,8 @@ class Main extends Component{
                 loginUser={this.props.loginUser}
                 logoutUser={this.props.logoutUser}
                 fetchSearchUsers={this.props.fetchSearchUsers}
+                search={this.props.search}
+                fetchOUser={this.props.fetchOUser}
                  />
                  
               
