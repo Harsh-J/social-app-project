@@ -91,6 +91,7 @@ export const fetchPosts=()=>(dispatch)=>{
                 localStorage.setItem('creds', JSON.stringify(creds));
                 // Dispatch the success action
                 //dispatch(fetchFavorites());
+                setTimeout(()=>dispatch(logoutUser()),86400000);
                 dispatch(receiveLogin(response));
                 dispatch(fetchFollowingPosts());
                 dispatch(fetchprofile());
