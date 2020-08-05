@@ -5,8 +5,10 @@ const authenticate=require('../authenticate');
 const cors=require('./cors');
 
 const Post=require('../models/posts');
+
 const { authorize } = require('passport');
 const posts = require('../models/posts');
+
 
 const postsRouter=express.Router();
 postsRouter.use(bodyParser.json());
@@ -67,9 +69,12 @@ postsRouter.route('/myposts')
 .options(cors.corsWithOptions,(req,res)=>{res.sendStatus=(200);})
 
 .get(cors.cors,authenticate.verifyUser,(req,res,next)=>{
+  
 
     Post.find({postedBy:req.user._id})
     .populate('postedBy')
+    .populate('postedBy.followers')
+    .populate('postedBy.following')
     .then((posts)=>{
         res.statusCode=200;
         res.setHeader('Content-Type','application/json');

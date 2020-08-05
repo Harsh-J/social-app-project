@@ -523,3 +523,72 @@ box-shadow: 0px 6px 6px -1px rgba(201,201,201,0.87);
   /* border: wheat; */
   border: 1px solid white;
 }
+.followersbtn{
+  /* background: no-repeat; */
+ 
+  outline: none !important;
+  border: none !important;
+  color: black !important;
+ font-size: 17px !important;
+  background: antiquewhite !important;
+  /* padding-left: 5px; */
+  /* padding: 0px; */
+  border-radius: 5px !important;
+  margin-left: 4px !important;
+  margin-right: 4px !important;
+}
+.followersbtn:active{
+box-shadow: none !important;
+border: none;
+outline: none !important;
+}
+.followersbtn:focus{
+box-shadow: none !important;
+}
+.followingbtn{
+outline: none !important;
+  border: none !important;
+  color: black !important;
+  font-size: 17px !important;
+  background: thistle !important;
+  border-radius: 5px !important;
+  /* padding-left: 5px; */
+  /* padding: 0px; */
+ 
+}
+.followingbtn:active{
+box-shadow: none !important;
+border: none;
+outline: none !important;
+}
+.followingbtn:focus{
+box-shadow: none !important;
+}
+.postnumberbtn{
+
+outline: none !important;
+  border: none !important;
+  color: black !important;
+  font-size: 17px !important;
+  background: #C8E6C9 !important;
+  border-radius: 5px !important;
+  /* padding-left: 5px; */
+  /* padding: 0px; */
+ 
+}
+.postnumberbtn:active{
+box-shadow: none !important;
+border: none;
+outline: none !important;
+}
+.postnumberbtn:focus{
+box-shadow: none !important;
+}
+.btngrp{
+margin-bottom: 10px;
+
+}
+.btngrpoprofile{
+margin-bottom: 10px;
+width: 100% !important;
+}

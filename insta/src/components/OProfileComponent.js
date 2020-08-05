@@ -1,11 +1,45 @@
 import React,{Component} from 'react';
 import {Button} from 'reactstrap';
 
-import {Card,CardImg,CardImgOverlay,CardTitle, CardBody,CardText, CardHeader, Row,Label,Modal,ModalBody,ModalHeader,Col,Alert,Spinner} from 'reactstrap';
+import {Card,CardImg,CardImgOverlay,CardTitle, CardBody,CardText, CardHeader, Row,Label,Modal,ModalBody,ModalHeader,Col,Alert,Spinner,ButtonGroup} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm } from 'react-redux-form';
 import {Loading} from './LoadingComponent';
-
+function RenderUser({users,fetchOUser}) {
+    if (users != null)
+        return(
+            <div className="col-12 col-md-12 m-1">
+               
+                <ul className="list-unstyled">
+                
+                        {users.map((user) => {
+                            return (
+                                <div key={user._id}>
+                                    
+                                    <li>
+                           
+                           
+                           
+                                    <p className="comment" ><img className="likemodalpic" src={user.photo} width="40px" height="40px" /><span className=""> {user.firstname} {user.lastname}</span><Link to={`/oprofile/${user.username}`}  className="oprofilelink" onClick={()=>fetchOUser(user._id)}><span className="likedby">@ {user.username}</span></Link></p>
+                                  
+                                    
+                                  
+                                    </li>
+                                    <hr className="commentline"></hr>
+                                
+                                </div>
+                            );
+                        })}
+                  
+                </ul>
+               
+            </div>
+        );
+    else
+        return(
+            <div></div>
+        );
+}
 class OProfile extends Component{
 
     constructor(props){
@@ -13,9 +47,13 @@ class OProfile extends Component{
         
         this.toggleModal=this.toggleModal.bind(this);
         this.onDismiss=this.onDismiss.bind(this);
+        this.toggleFollowersModal=this.toggleFollowersModal.bind(this);
+        this.toggleFollowingModal=this.toggleFollowingModal.bind(this);
 
         this.state={
             isModalOpen:false,
+            isFollowersModalOpen:false,
+            isFollowingModalOpen:false,
         
         };
 
@@ -33,6 +71,16 @@ class OProfile extends Component{
     handleSubmit(values){
         this.toggleModal();
        
+    }
+    toggleFollowersModal(){
+        this.setState({
+            isFollowersModalOpen:!this.state.isFollowersModalOpen
+        })
+    }
+    toggleFollowingModal(){
+        this.setState({
+            isFollowingModalOpen:!this.state.isFollowingModalOpen
+        })
     }
 
     render(){
@@ -103,14 +151,14 @@ class OProfile extends Component{
                 <span></span>
             }</p>
              
-        <p >{this.props.user.ouserposts.length>0 ? <span>{this.props.user.ouserposts.length} posts</span> :<span>posts</span>} 
-            {this.props.user.ouserposts.length>0 ? <span className="ml-2">{this.props.user.ouserposts[0].postedBy.followers.length}</span>:<span></span>} followers 
-            {this.props.user.ouserposts.length>0 ? <span className="ml-2">{this.props.user.ouserposts[0].postedBy.following.length}</span>:<span></span>} following</p>
+             <ButtonGroup className="btngrpoprofile" size="lg"><Button className="postnumberbtn">{this.props.user.ouserposts.length>0 ? <span>{this.props.user.ouserposts.length} posts</span> :<span>posts</span>} </Button>
+          <Button className="followersbtn" onClick={this.toggleFollowersModal}>  {this.props.user.ouserposts.length>0 ? <span className="ml-2">{this.props.user.ouserposts[0].postedBy.followers.length}</span>:<span></span>} followers </Button>
+            <Button className="followingbtn" onClick={this.toggleFollowingModal}>{this.props.user.ouserposts.length>0 ? <span className="ml-2">{this.props.user.ouserposts[0].postedBy.following.length}</span>:<span></span>} following</Button></ButtonGroup>
             {this.props.currentuser.userinfo._id===this.props.user.ouserinfo._id ?
             <span></span>
             :
             //show unfollow button if this user is already present in the current logged in list of following users
-            this.props.user.ouserinfo.followers.indexOf(this.props.currentuser.userinfo._id) !==-1 ?
+            this.props.user.ouserinfo.followers.filter((user)=>user._id===this.props.currentuser.userinfo._id).length >0  ?
             <span><Button color="primary" className="unfollowbtn" onClick={()=>this.props.unfollowUser(this.props.user.ouserinfo._id)}>Unfollow{this.props.user.ouserunfollowLoading ? <span className="fa fa-spinner fa-pulse ml-1"></span>
             :
             <span></span>}</Button></span>
@@ -125,7 +173,36 @@ class OProfile extends Component{
                 </div>
                 </div>
                 <hr></hr>
+                <Modal isOpen={this.state.isFollowersModalOpen} toggle={this.toggleFollowersModal}>
+        <ModalHeader toggle={this.toggleFollowersModal} >Followers of {this.props.user.ouserinfo.username}</ModalHeader>
+            <ModalBody>      
+                      
+               
+                {this.props.user.ouserinfo  ?
+                    <span><RenderUser users={this.props.user.ouserinfo.followers} fetchOUser={this.props.fetchOUser}  /></span>           
+                    :
+                    <span></span>
+    }
+
                 
+            </ModalBody>
+            
+           </Modal>
+           <Modal isOpen={this.state.isFollowingModalOpen} toggle={this.toggleFollowingModal}>
+        <ModalHeader toggle={this.toggleFollowingModal} >{this.props.user.ouserinfo.username} follows-</ModalHeader>
+            <ModalBody>      
+                      
+               
+                {this.props.user.ouserinfo  ?
+                    <span><RenderUser users={this.props.user.ouserinfo.following} fetchOUser={this.props.fetchOUser} /></span>           
+                    :
+                    <span></span>
+    }
+
+                
+            </ModalBody>
+            
+           </Modal>
                 {posts.length==0 ?
                  <span className="defaultmsg">Looks like {this.props.userinfo.username } doesn't have any good photos :p <span></span></span>:
                  

@@ -28,6 +28,13 @@ router.get('/', function (req, res, next) {
 router.get('/currentuser',authenticate.verifyUser,cors.corsWithOptions,(req,res,next)=>{
 
   User.findById(req.user._id)
+  .populate({
+    path: 'followers',
+    // Get friends of friends - populate the 'friends' array for every friend
+    populate: { path: 'followers' }
+})
+  .populate('following')
+
   .then(user=>{
 
     res.statusCode=200;
@@ -164,6 +171,12 @@ router.get('/checkJWTToken',(req,res,next)=>{
 router.get('/:id',cors.cors,(req,res,next)=>{
 
   User.findOne({_id:req.params.id})
+  .populate({
+    path: 'followers',
+    // Get friends of friends - populate the 'friends' array for every friend
+    populate: { path: 'followers' }
+})
+  .populate('following')
   .then((user)=>{
     //we want to get all the posts created by the this user
     Post.find({postedBy:req.params.id})

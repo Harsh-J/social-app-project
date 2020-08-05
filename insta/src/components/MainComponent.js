@@ -111,8 +111,8 @@ class Main extends Component{
                                                                      postunlike={this.props.postunlike}
                 />} />
                     <Route exact path="/createPost" component={()=><CreatePost postaPost={this.props.postaPost} user={this.props.user} upload={this.props.upload} />} />
-                    <Route exact path="/profile" component={()=><Profile profile={this.props.profile} user={this.props.user} userinfo={this.props.user.userinfo} postUserPic={this.props.postUserPic} />} />
-                    <PrivateRoute exact path="/oprofile/:username" component={()=><OProfile user={this.props.ouser} userinfo={this.props.ouser.ouserinfo} currentuser={this.props.user} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser}/>} />
+                    <Route exact path="/profile" component={()=><Profile profile={this.props.profile} user={this.props.user} userinfo={this.props.user.userinfo} postUserPic={this.props.postUserPic} fetchOUser={this.props.fetchOUser}/>} />
+                    <PrivateRoute exact path="/oprofile/:username" component={()=><OProfile user={this.props.ouser} userinfo={this.props.ouser.ouserinfo} currentuser={this.props.user} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} fetchOUser={this.props.fetchOUser}/>} />
                     <Route exact path="/followingPosts" component={()=> <MyFollowingPosts posts={this.props.followingposts} 
                                                                      likes={this.props.likes}
                                                                      postlike={this.props.postlike}
