@@ -5,7 +5,7 @@ const app=express();
 //contains all the orignin that 
 //serve is willing to accept
 
-const whitelist=['http://localhost:3000','http://localhost:3001','https://getsocialapplication.herokuapp.com/'];
+const whitelist=['http://localhost:3000','http://localhost:3001','https://getsocialapplication.herokuapp.com/','https://get-social.onrender.com/'];
 var corsOptionsDelegate=(req,callback)=>{
 
     var corsOptions;
