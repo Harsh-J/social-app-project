@@ -55,7 +55,7 @@ app.use("/posts", postsRouter);
 app.use("/comments", commentRouter);
 app.use("/likes", likeRouter);
 
-app.use(express.static(path.join(__dirname, "insta/build")));
+//app.use(express.static(path.join(__dirname, "insta/build")));
 
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("insta/build"));
