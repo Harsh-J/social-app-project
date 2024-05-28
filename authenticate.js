@@ -16,14 +16,14 @@ passport.deserializeUser(User.deserializeUser());
 
 exports.getToken = function (user) {
     //this will create a token and return it
-    return jwt.sign(user, config.secretKey,
+    return jwt.sign(user, process.env.JWT_SECRET,
         { expiresIn: 86400 });
 
 };
 var opts = {};
 //that how jwt will be xtracted from request
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = config.secretKey;
+opts.secretOrKey = process.env.JWT_SECRET;
 
 //json web token passport statraegy
 exports.jwtPassport = passport.use('user',new JwtStrategy(opts,

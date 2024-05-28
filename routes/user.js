@@ -267,7 +267,7 @@ router.post('/search-users',authenticate.verifyUser,cors.corsWithOptions,(req,re
  
  
   let userPat=new RegExp("^"+req.body.query);
-  User.find({firstname:{$regex:userPat}})
+  User.find({username:{$regex:userPat}})
     .then(user=>{
       res.json({user});
     },(err)=>next(err))
