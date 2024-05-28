@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
 var express = require("express");
 var path = require("path");
+var cors=require("cors")
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var passport = require("passport");
